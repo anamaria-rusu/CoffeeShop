@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css_js/log_inreg.css">
+    <title>Document</title>
+</head>
+<body>
+  
+    <div class="login">
+      <h2>Inregistreaza-te</h2>
+      <form action="/inregistrare" method="POST">
+        <div id="input-box">
+        <div class="inputs">
+          <label for="username">Username:</label>
+          <input class="zona_input" type="text" name="username" placeholder="username" id="username" required/>
+        </div>
+        <div class="inputs">
+          <label for="email">Email:</label>
+          <input class="zona_input" type="email" name="email" placeholder="email" id="email" required/>
+        </div>
+        <div class="inputs">
+          <label for="password">Password:</label>
+          <input class="zona_input" type="password" name="password" placeholder="parola" id="password" required/>
+        </div>
+      </div>
+        <button>Inregistreaza</button>
+      </form>
+    </div>
+    <script src="./css_js/log_inreg.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1396 @@
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: black;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background:linear-gradient(transparent,#dfcda8) ;
+	border-radius: 6px;
+}
+
+
+
+body 
+{
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column;
+	margin: 0;
+	padding: 0;
+	background: rgb(0,0,0);
+	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(18,18,20,1) 49%, rgba(0,0,0,1) 100%);
+}
+main 
+{
+	display: flex; 
+	flex-direction: column; 
+}
+
+
+
+
+/*partea de meniu + animatie */
+.nav-area a 
+{
+	font-size: 15px;
+	text-transform: uppercase;
+}
+.nav-area 
+{
+    display: flex;
+	margin-top:10px;
+}
+
+
+
+.nav-area ul 
+{
+	list-style: none;
+	margin:0;
+}
+.nav-area>ul>li 
+{
+	float: left; /*elementele se pun in stanga*/
+	position: relative;
+	margin-right:25px;
+}
+
+.nav-area ul li a {
+	
+	position:relative;
+	margin:10px;
+	padding:10px 30px;
+	text-decoration: none;
+	color: #dfcda8;
+	display: block;
+	overflow: hidden;
+  	transition: 0.5s;
+	border-radius: 4px;;
+}
+
+
+.nav-area ul li a:hover {
+
+  background: #dfcda8;
+  color:#1a0f04;
+  box-shadow: 0 0 20px #dfcda8;
+  transition-delay:0.5s;
+}
+
+
+.nav-area ul li a:before
+{
+  content:'';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top:2px solid #dfcda8;
+  border-left:2px solid #dfcda8;
+  transition:0.5s;
+  transition-delay:0.5s;
+
+}
+
+.nav-area ul li a:hover::before
+{
+  /*dunga<=>contur buton*/
+  width: 100%;
+  height: 100%;
+}
+
+.nav-area ul li a:after
+{
+  content:'';
+  position: absolute;
+  bottom: 0;
+  right:0;
+  width: 10px;
+  height: 10px;
+  border-bottom:2px solid #dfcda8;
+  border-right:2px solid #dfcda8;
+  transition:0.5s;
+  transition-delay:0.5s;
+}
+
+.nav-area ul li a:hover::after{
+  width: 100%;
+  height: 100%;
+}
+
+.nav-area ul ul {
+	position: absolute;
+	padding: 0;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 1; /* pentru a afisat intai menuiul dd , apoi poza (container1)*/
+}
+.nav-area ul li:hover>ul {
+	display: block;
+}
+.nav-area ul ul li:hover a {
+	background-color:#dfcda8;
+}
+.nav-area ul ul li {
+	position: relative;
+}
+
+
+
+
+
+.container1
+{
+	position: relative;
+	text-align: center;
+	margin-top:20px;
+	margin-bottom :20px;
+	margin-right:20px;
+	z-index: 0;
+}
+.container1 img
+{	
+	height: 550px;
+	width: 100%;
+	position: relative;
+	border-radius: 10px;
+	-webkit-mask-image: linear-gradient(#000,rgba(0,0,0,0.2));
+	mask-image:  linear-gradient(#000, rgba(0,0,0,0));
+}
+.text_container_1
+{
+	position: absolute;
+	top: 20%;
+	margin:20px;
+	width: 50%;
+}
+
+.text_container_1 h1
+{
+	text-align: left;
+	margin-left:30px;
+	font-size:60px;
+	color:rgb(210, 184, 136);
+	text-shadow: 2px 2px 4px #6c6a6a;
+}
+
+.text_container_1 p
+{
+	font-size:20px;
+	color:#e6dcc3;	
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+.text_container_2
+{
+	width: 100%;
+	margin-top:40px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+.text_container_2 h2
+{
+	position: relative;
+	text-align: center;
+	font-size: 50px;
+	color:rgb(18, 18, 18);
+	-webkit-text-stroke: 0.05vw grey; /*adaugam un contur in jurul textului */
+	text-transform: uppercase;
+}
+
+
+.text_container_2 h2::before
+{
+	content:attr(data-text);
+	position: absolute;
+	left:0;
+	top:0;
+	width: 0;
+	height: 100%;
+	color:rgb(210, 184, 136);
+	-webkit-text-stroke: 0vw grey;
+	border-right: 2px solid rgb(210, 184, 136);
+	overflow:hidden;
+	animation: animate_text_container_2 6s linear infinite;
+}
+
+@keyframes animate_text_container_2
+{
+	0%,10%,100%
+	{
+		width:0;
+	}
+	70%
+	{
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+.text_container_2_paragraf
+{
+	font-size: 20px;
+	color:#e6dcc3;	
+	margin-left:30px;
+	margin-right: 30px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.container2
+{
+	width: 90%;
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	gap:15px;
+	margin:auto;
+}
+
+.container2 .card
+{
+	border:solid rgb(0, 0, 0);
+	width: 20%;
+	border-radius: 15px ;
+	cursor: pointer;
+	overflow: hidden;
+	transition: 0.5s;
+}
+
+.container2 .card:hover
+{
+	width: 70%;
+}
+
+.container2 .card img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.container2 .card:hover img
+{
+	transform: scale(1.2); /*marim imaginea*/
+}
+
+.container2 .card .layer
+{
+	width: 100%;
+	height: 50%;
+	margin-top:-250px;
+	position: relative;
+	background: linear-gradient(to top,black,transparent);
+}
+
+.container2 .card .layer .info
+{ 
+	width: 260px;
+	position: absolute;
+	bottom: 10px;
+	padding: 20px;
+	opacity: 0;
+}
+
+.container2 .card:hover .layer .info
+{
+	opacity: 1;
+}
+
+.info h1
+{ 
+	font-size: 30px;
+	color:rgb(0, 0, 0);
+
+}
+.info p
+{
+	color:white;
+	font-size: 15px;
+	margin-top:5px;
+}
+
+
+
+
+
+
+/* review*/
+
+.container3
+{
+	position: relative;
+	width: 90%;
+	height: 350px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top:200px;
+
+}
+
+.text_container_3
+{
+	color:rgb(210, 184, 136);
+	height: 100%;
+	width: 100%;
+	margin:30px;
+	margin-top:100px;
+}
+
+.text_container_3 p
+{
+	font-size: 20px;
+	color:#e6dcc3;	
+}
+
+.text_container_3 h2
+{
+	width: 70%;
+	position: relative;
+	font-size:30px;
+	color:rgb(20, 10, 0);
+	-webkit-text-stroke: 0.05vw grey;
+	text-transform: uppercase;
+}
+
+.text_container_3 h2::before
+{
+	content:attr(data-text);
+	position: absolute;
+	left:0;
+	top:0;
+	width: 0;
+	height: 100%;
+	color:rgb(210, 184, 136);
+	-webkit-text-stroke: 0vw grey;
+	border-right: 2px solid rgb(210, 184, 136);
+	overflow:hidden;
+	animation: animate_text_container_2 6s linear infinite;
+}
+
+.container3 .box
+{
+	position: relative;
+	width: 80%;
+	height: 220px;
+	display: flex;
+	color:rgb(203, 195, 179);
+	justify-content: center;
+	align-items: center;
+	margin-right: 30px;
+}
+
+.container3 .box:hover
+{
+	color:#1b1307;
+}
+
+.container3 .box:before
+{
+	content:"";
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(29, 21, 18);
+	filter: url(#wavy);
+
+}
+
+.container3 .box:hover:before
+{
+	background-color:#695842;
+	transition:0.8s;
+}
+
+.container3 .box .content
+{
+	position: absolute;
+	padding:20px;
+	text-align: center;
+	transition:0.5s;
+}
+
+.container3 .box:after
+{
+	content:"";
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	border-right: none;
+	filter: url(#wavy);
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+svg
+{
+	width: 0;
+	height: 0;
+}
+
+
+
+
+/*cel mai apreciat*/
+.container4
+{
+	position: relative;
+	width: 90%;
+	display: flex;
+	flex-wrap:wrap; /*in cazul in care nu incape pe o linie, se pune pe doua*/
+	margin-top:200px;
+	margin-left:60px;
+	margin-bottom: 100px;
+}
+.text_container4
+{
+	height: 100%;
+	width: 50%;
+
+}
+.text_container4 h2
+{
+	position: relative;
+	font-size: 35px;
+	color:rgb(20, 10, 0);
+	-webkit-text-stroke: 0.05vw grey;
+	text-transform: uppercase;
+	
+}
+.text_container4 h2::before
+{
+	content:attr(data-text);
+	position: absolute;
+	left:0;
+	top:0;
+	width: 0;
+	height: 100%;
+	color:rgb(210, 184, 136);;
+	-webkit-text-stroke: 0vw grey;
+	border-right: 2px solid rgb(210, 184, 136);
+	overflow:hidden;
+	animation: animate_text_container_2 6s linear infinite;
+}
+
+.text_container4 p
+{
+	font-size: 18px;
+	color:#e6dcc3;
+}
+
+.container_card
+{
+	width: 40%;
+	height:350px;
+	perspective: 600px;
+	margin-right: 30px;
+}
+
+.container_card:hover>.card
+{
+	cursor: pointer;
+	transform:rotateY(180deg) rotateZ(180deg);
+}
+
+.container_card .card
+{
+	height: 100%;
+	width:100%;
+	position: relative;
+	transition: transform 1.5s;
+	transform-style: preserve-3d; /*copiii elementului ar trebui să fie poziționați în spațiul 3D*/
+
+}
+
+.container_card .card .front,
+.container_card .card .back
+{
+	height: 100%;
+	width: 100%;
+	border-radius: 2rem;
+	box-shadow: 0 0 5px 2px rgba(50, 50, 50,0.25);
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+
+.container_card .card .front
+{
+	
+	background: linear-gradient(90deg, rgba(83,66,60,1) 0%, rgba(59,47,42,1) 29%, rgba(27,22,19,1) 100%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+
+}
+.container_card .card .front h1
+{
+	font-size: 35px;
+	color:#eadccb;
+	position:relative;
+	
+}
+.container_card .card .front p
+{
+	font-size: 18px;
+	color:#c9b3a6;
+	margin:10px;
+	text-align: center;
+}
+.container_card .card .back
+{
+	background: url(card_photo.jpg);
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	transform: rotateY(180deg) rotateZ(180deg);
+}
+
+
+
+
+
+
+
+/*Despre*/
+
+.Despre h1
+{
+	text-align: center;
+	color:#3f3732;
+	text-transform: uppercase;
+	padding-top:100px;
+	font-size:40px;
+}
+
+.Despre h1 span
+{
+	color:#dfcda8;
+	text-transform: uppercase;
+}
+
+
+.Despre .row
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap:wrap;
+	height: 100%;
+	width: 100%;
+}
+
+.Despre .row .imagine img
+{
+	height: 100%;
+	width: 100%;
+	border-radius: 20px;
+	-webkit-mask-image: linear-gradient(#000,rgba(0,0,0,0.2));
+	mask-image:  linear-gradient(#000, rgba(0,0,0,0));
+}
+
+.Despre .row .content
+{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	height:360px;
+	width: 540px;
+	background-color: #0c0c0c;
+	border-radius: 20px;
+	margin:10px;
+}
+
+.Despre .row .content p
+{
+	font-size:15px;
+	color:#c9b3a6;
+	line-height: 1.8;
+	margin:20px;
+}
+
+.Despre .row .content h3
+{
+	font-size:23px;
+	color:#eadccb;
+	line-height: 1.8;
+	margin:20px;
+	text-align: center;
+}
+
+
+
+
+/*magazine*/
+
+
+.titlu_magain
+{
+	margin-top:200px;
+	display: block;
+	text-align: center;
+}
+
+.titlu_magain h1
+{
+	font-size: 40px;
+	color:rgb(210, 184, 136);
+	text-transform: uppercase;
+}
+
+.titlu_magain p
+{
+	font-size: 25px;
+	color:#ebe1d4;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+
+
+.Magazine
+{
+	width: 100%;
+	height: 600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 100px;
+}
+
+.Magazine .card
+{
+	width: 20%;
+	height: 90%;
+	border-radius: 20px;
+	overflow: hidden;
+	border:8px solid;
+	position: relative;
+	margin-right: 20px;
+}
+
+.Magazine .card_img
+{
+	width: 100%;
+	height: 100%;
+	object-fit:cover;
+	border-radius: 15px;
+}
+
+
+.Magazine .info_card
+{
+	width: 100%;
+	height: 100%;
+	top:0;
+	right: -100%;
+	position: absolute;
+	background:rgba(45, 45, 45, 0.199);
+	backdrop-filter: blur(5px);
+	border-radius: 15px;
+	color:white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center; 
+	transition: 2s;
+}
+
+
+.Magazine .card:hover .info_card
+{
+	right:0;
+}
+
+
+.Magazine .info_card h1
+{
+	font-size:30px;
+	margin:20px;
+
+}
+.Magazine .info_card p
+{
+	font-size:20px;
+	margin:20px;
+}
+
+
+
+/*footer*/
+footer
+{
+	background-color: rgb(0, 0, 0);
+	text-align: center;
+}
+
+footer p
+{
+	color:#6c6a6a;
+	font-size: 10px;
+}
+
+
+
+
+
+
+@media (max-width:1080px)
+{
+	.text_container4 h2
+	{
+		font-size: 25px;
+	}
+}
+
+
+
+
+@media (max-width:990px)
+{
+
+	/*recenzii*/
+	.text_container_3 p
+	{
+		font-size: 15px;
+	}
+
+	.text_container_3 h2
+	{
+		font-size:20px;
+	}
+
+	.container3 .box .content
+	{
+		font-size:13px;
+	}
+
+
+	.container1 img
+	{	
+		height: 400px;
+	}
+
+	.text_container_1 h1
+	{
+		font-size:40px;
+	}
+
+	.text_container_1 p
+	{
+		font-size:15px;
+
+	}
+
+	.text_container_2 h2
+	{
+		font-size: 40px;
+	}
+
+	.text_container_2_paragraf
+	{
+		font-size: 15px;
+	}
+
+	.container2
+	{
+		height: 400px;
+	}
+	.container2 .card .layer
+	{
+		margin-top:-200px;
+	}
+
+	.info h1
+	{ 
+		font-size: 20px;
+	}
+	.info p
+	{
+		font-size: 10px;
+	}
+
+	.Despre h1
+	{
+		font-size:25px;
+	}
+
+	
+	.Despre .row .content h3
+	{
+		font-size:20px;
+	}
+	.Despre .row .content p
+	{
+		font-size:10px;
+	}
+
+	.Despre .row .content
+	{
+
+		height:350px;
+		width: 300px;
+	}
+
+
+	.titlu_magain h1
+	{
+		font-size: 25px;
+	}
+
+	.titlu_magain p
+	{
+		font-size: 15px;
+	}	
+
+
+	.text_container4 p
+	{
+		font-size: 15px;
+	}
+
+	.text_container4 h2
+	{
+		font-size: 23px;
+	}
+	.container_card
+	{
+	
+		height:300px;
+	
+	}
+	.container_card .card .front h1
+	{
+		font-size: 25px;
+	}
+
+
+	.container_card .card .front p
+	{
+		font-size: 15px;
+	}
+
+}
+
+
+
+
+@media (max-width:700px)
+{
+
+	.nav-area a 
+	{
+		font-size: 10px;
+	}
+
+
+	.text_container_3 p
+	{
+		font-size: 10px;
+	}
+
+	.text_container_3 h2
+	{
+		font-size:15px;
+	}
+
+	.container3 .box .content
+	{
+		font-size:10px;
+	}
+
+
+	.container1 img
+	{	
+		height: 300px;
+	}
+
+	.text_container_1 h1
+	{
+		font-size:15px;
+	}
+
+	.text_container_1 p
+	{
+		font-size:12px;
+
+	}
+
+	.text_container_2 h2
+	{
+		font-size: 40px;
+	}
+
+	.text_container_2_paragraf
+	{
+		font-size: 15px;
+	}
+
+	.container2
+	{
+		height: 400px;
+	}
+	.container2 .card .layer
+	{
+		margin-top:-200px;
+	}
+	.container2 .card .layer .info
+	{ 
+		width: 160px;
+	}
+
+	.info h1
+	{ 
+		font-size: 20px;
+	}
+	.info p
+	{
+		font-size: 10px;
+	}
+
+	.Despre h1
+	{
+		font-size:25px;
+	}
+
+	
+	.Despre .row .content h3
+	{
+		font-size:15px;
+	}
+	.Despre .row .content p
+	{
+		font-size:8px;
+	}
+	.Despre .row .content
+	{
+		height:300px;
+		width: 400px;
+	}
+
+
+	.titlu_magain h1
+	{
+		font-size: 17px;
+	}
+
+	.titlu_magain p
+	{
+		font-size: 12px;
+	}	
+	.Magazine
+	{
+		height: 450px;
+	}
+	.Magazine .info_card h1
+	{
+		font-size:20px;
+		margin:10px;
+
+	}
+	.Magazine .info_card p
+	{
+		font-size:10px;
+		margin:10px;
+	}
+
+
+	.container4
+	{
+		width: 80%;
+		margin-top:80px;
+
+	}
+	.text_container4 
+	{
+		width: 100%;
+	}
+	.text_container4 p
+	{
+		font-size: 10px;
+	}
+	
+	.text_container4 h2
+	{
+		font-size: 15px;
+	}
+
+	.container_card
+	{
+		width: 80%;
+		height:200px;		
+	}
+
+	.container_card .card .front h1
+	{
+		font-size: 12px;
+	}
+
+	.container_card .card .front p
+	{
+		font-size: 9px;
+	}
+
+}
+
+
+
+@media (max-width:480px)
+{
+
+	.nav-area a 
+	{
+		font-size: 7px;
+	}
+
+
+	.container1 img
+	{	
+		height: 250px;
+	}
+
+	.text_container_1 h1
+	{
+		font-size:15px;
+	}
+
+	.text_container_1 p
+	{
+		font-size:12px;
+
+	}
+
+	.text_container_2 h2
+	{
+		font-size: 25px;
+	}
+
+	.text_container_2_paragraf
+	{
+		font-size: 10px;
+	}
+
+	.container2
+	{
+		height: 400px;
+	}
+	.container2 .card .layer
+	{
+		margin-top:-200px;
+	}
+	.container2 .card .layer .info
+	{ 
+		width: 90px;
+	}
+	.container3
+	{
+		margin-top:0px;
+	}
+	.container3 .box .content
+	{
+		font-size:6px;
+	}
+	.container3 .box
+	{
+		height: 150px;
+	}
+	.text_container_3
+	{
+		margin-top:200px;
+	}
+	.text_container_3 h2
+	{
+		font-size:10px;
+	}
+	.text_container_3 p
+	{
+		font-size:8px;
+	}
+
+
+	.info h1
+	{ 
+		font-size: 16px;
+	}
+	.info p
+	{
+		font-size: 9px;
+	}
+
+	.Despre h1
+	{
+		font-size:17px;
+	}
+
+	
+	.Despre .row .content h3
+	{
+		font-size:15px;
+	}
+	.Despre .row .content p
+	{
+		font-size:8px;
+	}
+	.Despre .row .content
+	{
+		height:300px;
+		width: 400px;
+	}
+
+
+	.titlu_magain h1
+	{
+		font-size: 17px;
+	}
+
+	.titlu_magain p
+	{
+		font-size: 12px;
+	}	
+	.Magazine
+	{
+		height: 400px;
+	}
+	.Magazine .info_card h1
+	{
+		font-size:10px;
+		margin:10px;
+
+	}
+	.Magazine .info_card p
+	{
+		font-size:7px;
+		margin:10px;
+	}
+
+
+	.container4
+	{
+		width: 80%;
+		margin-top:50px;
+
+	}
+	.text_container4 
+	{
+		width: 100%;
+	}
+	.text_container4 p
+	{
+		font-size: 10px;
+	}
+	
+	.text_container4 h2
+	{
+		font-size: 15px;
+	}
+
+	.container_card
+	{
+		width: 80%;
+		height:200px;		
+	}
+
+	.container_card .card .front h1
+	{
+		font-size: 12px;
+	}
+
+	.container_card .card .front p
+	{
+		font-size: 9px;
+	}
+
+}
+
+
+
+
+@media (max-width:350px)
+{
+
+	.nav-area a 
+	{
+		font-size: 6px;
+	}
+
+
+	.container1 img
+	{	
+		height: 220px;
+	}
+
+	.text_container_1 h1
+	{
+		font-size:12px;
+	}
+
+	.text_container_1 p
+	{
+		font-size:10px;
+
+	}
+
+	.text_container_2 h2
+	{
+		font-size: 22px;
+	}
+
+	.text_container_2_paragraf
+	{
+		font-size: 8px;
+	}
+
+	.container2
+	{
+		height: 400px;
+	}
+	.container2 .card .layer
+	{
+		margin-top:-200px;
+	}
+	.container2 .card .layer .info
+	{ 
+		width: 80px;
+	}
+	.container3
+	{
+		margin-top:0px;
+	}
+	.container3 .box .content
+	{
+		font-size:5px;
+	}
+	.container3 .box
+	{
+		height: 140px;
+	}
+	.text_container_3
+	{
+		margin-top:180px;
+	}
+	.text_container_3 h2
+	{
+		font-size:8px;
+	}
+	.text_container_3 p
+	{
+		font-size:6px;
+	}
+
+
+	.info h1
+	{ 
+		font-size: 14px;
+	}
+	.info p
+	{
+		font-size: 7px;
+	}
+
+	.Despre h1
+	{
+		font-size:15px;
+	}
+
+	
+	.Despre .row .content h3
+	{
+		font-size:13px;
+	}
+	.Despre .row .content p
+	{
+		font-size:7px;
+	}
+	.Despre .row .content
+	{
+		height:280px;
+		width: 350px;
+	}
+
+
+	.titlu_magain h1
+	{
+		font-size: 15px;
+	}
+
+	.titlu_magain p
+	{
+		font-size: 10px;
+	}	
+	.Magazine
+	{
+		height: 400px;
+	}
+	.Magazine .info_card h1
+	{
+		font-size:10px;
+		margin:6px;
+
+	}
+	.Magazine .info_card p
+	{
+		font-size:7px;
+		margin:10px;
+	}
+
+
+	.container4
+	{
+		width: 75%;
+		margin-top:50px;
+
+	}
+	.text_container4 
+	{
+		width: 100%;
+	}
+	.text_container4 p
+	{
+		font-size: 10px;
+	}
+	
+	.text_container4 h2
+	{
+		font-size: 15px;
+	}
+
+	.container_card
+	{
+		width: 80%;
+		height:200px;		
+	}
+
+	.container_card .card .front h1
+	{
+		font-size: 12px;
+	}
+
+	.container_card .card .front p
+	{
+		font-size: 9px;
+	}
+
+}

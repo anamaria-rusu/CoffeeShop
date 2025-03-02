@@ -1,0 +1,25 @@
+body
+{
+    margin:0;
+    background-color: white;
+}
+
+#error
+{
+    margin-top:100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1
+{
+    font-size: 40px;
+}
+
+#error_text,a
+{
+    font-size: 20px;
+}
+

@@ -1,0 +1,133 @@
+
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color:white;
+}
+body
+{
+    margin-top: 20px;
+    color:#d9d9d9;
+    background: rgb(30,45,122);
+    background: linear-gradient(90deg, rgba(30,45,122,1) 0%, rgba(133,22,44,1) 100%);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+
+
+.zona_input
+{
+   display: block;
+   width: 300px;
+   padding: 20px;
+   background-color: transparent;
+   border: 2px solid #d9d9d9;
+   outline:none;
+   border-radius: 6px;
+   font-size: 15px;
+   margin:12px 0;
+
+}
+
+.zona_input::placeholder
+{
+    color:#6f6f6f;
+}
+
+.input-box
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.error
+{
+    border-color:rgb(199, 0, 0);
+}
+
+.input_error
+{
+    font-size: 15px;
+    color:red;
+    text-align: left;
+    display: none;
+}
+
+.input_error.error
+{
+    display: block;
+}
+
+
+.corect
+{
+    border-color:rgb(0, 199, 0);
+    box-shadow:  0 0 5px rgb(0, 199, 0);
+}
+
+#submit
+{
+    padding:8px 25px;
+    margin-right: 10px;
+    margin-top:10px;
+    margin-bottom: 30px;
+    background: rgb(204,207,255);
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    font-size: 20px;
+    color:#d9d9d9;
+    box-shadow: 0 0 5px white;
+    cursor: pointer;
+}
+
+input
+{
+    color:white;
+}
+
+
+
+/*D and D*/
+#dd_msj
+{
+    font-size: 20px;
+    color:white;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#dd
+{
+    width: 100%;
+    display: flex;
+    margin-bottom: 40px;
+}
+
+#left,
+#right
+{
+    width: 150px;
+    height: 200px;
+    border: 2px dashed white;
+    margin-right: 20px;
+}
+
+
+.list
+{
+    background-color: rgba(0, 0, 0, 0.428);
+    height: 35px;
+    margin:15px;
+    display: flex;
+    align-items: center;
+    cursor: grab;
+    padding: 10px;
+    font-size: 13px;
+}

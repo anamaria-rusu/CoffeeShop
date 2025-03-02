@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css_js/comanda.css">
+    <title>Comanda</title>
+</head>
+<body>
+    <h1>Cos cumparaturi</h1>
+    <ul>
+        <% Object.keys(cart.items).forEach(function(id) { %>
+            <li>
+                <%= cart.items[id].item.nume %> 
+                <%= cart.items[id].qty %> bucăți 
+                <%= cart.items[id].pret %> RON
+                <a href="/delete_element/<%= id %>" role="button" data-method="DELETE">Sterge</a>
+            </li>
+        <% }); %>
+    </ul>
+    <p>Total: <%= cart.totalPrice %>RON</p>
+</body>
+</html>
