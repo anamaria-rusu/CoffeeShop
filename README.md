@@ -1,9 +1,9 @@
-# ☕ Coffee Shop App  
+# Coffee Shop App  
 
-## 📌 Overview  
+##  Overview  
 This project is an **online store** for a coffee shop, featuring an interactive presentation of the café and its products. The app includes a secure user management system and a dynamic UI to enhance the shopping experience.  
 
-## 📖 Features  
+##  Features  
 - **Online Coffee Shop** – Implementation of an e-commerce platform for the café, including product listings and a presentation page.  
 - **Modern UI Design** – Built using **HTML5, CSS3, and JavaScript** for a smooth and engaging user experience.  
 - **Animations & Interactivity** – Complex animations and interactive elements for enhanced usability.  
@@ -12,7 +12,7 @@ This project is an **online store** for a coffee shop, featuring an interactive 
 - **OOP Principles & Design Patterns** – Utilization of **Object-Oriented Programming** and design patterns like **Event Delegation** for optimized performance.  
 - **Database Integration** – Management of products and users through a **MongoDB** database using **Mongoose**.  
 
-## 📂 Technologies Used  
+##  Technologies Used  
 - **Frontend**: HTML5, CSS3, JavaScript  
 - **Backend**: Node.js, Express, EJS  
 - **Database**: MongoDB, Mongoose  
